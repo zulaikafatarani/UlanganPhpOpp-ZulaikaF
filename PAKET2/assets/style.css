@@ -1,0 +1,585 @@
+/* =========================================
+   1. PENGATURAN DASAR
+   Mengatur ukuran elemen dan tampilan umum
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* =========================================
+   2. CONTAINER UTAMA
+   Mengatur area utama setiap halaman
+========================================= */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    margin-top: 0;
+    color: #263b5e;
+}
+
+p {
+    color: #666;
+}
+
+/* =========================================
+   3. NAVIGASI
+   Mengatur menu Data Pasien dan Data Kunjungan
+========================================= */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.navigation a {
+    display: inline-block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #263b5e;
+    border-radius: 5px;
+    background: #edf1f7;
+    transition: 0.2s;
+}
+
+.navigation a.active,
+.navigation a:hover {
+    color: #fff;
+    background: #263b5e;
+}
+
+/* =========================================
+   4. TOOLBAR
+   Mengatur area tombol tambah data
+========================================= */
+
+.toolbar {
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   5. TOMBOL
+   Mengatur tampilan seluruh tombol aplikasi
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 9px 13px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: #2878c7;
+}
+
+.btn-info {
+    background: #17a2b8;
+}
+
+.btn-warning {
+    background: #e0a800;
+    color: #222;
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* =========================================
+   6. TABEL DATA
+   Mengatur tabel daftar pasien dan kunjungan
+========================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #263b5e;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* =========================================
+   7. KOLOM AKSI
+   Mengatur tombol Detail, Edit, dan Hapus
+========================================= */
+
+.aksi {
+    min-width: 190px;
+    white-space: nowrap;
+}
+
+.aksi .btn {
+    margin: 2px;
+}
+
+/* =========================================
+   8. FOTO PASIEN
+   Mengatur foto pada tabel dan halaman detail
+========================================= */
+
+.foto-tabel {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.foto-preview {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.detail-foto {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.foto-detail {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* =========================================
+   9. FORMULIR
+   Mengatur halaman Create dan Edit
+========================================= */
+
+.form-container {
+    max-width: 750px;
+}
+
+form {
+    margin-top: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2878c7;
+}
+
+input[type="file"] {
+    background: #f8f9fa;
+}
+
+/* =========================================
+   10. TOMBOL AKSI FORMULIR
+   Mengatur tombol Simpan, Update, dan Kembali
+========================================= */
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.form-actions .btn {
+    font-size: 14px;
+}
+
+/* =========================================
+   11. TABEL DETAIL
+   Mengatur tampilan informasi detail data
+========================================= */
+
+.detail-table th {
+    width: 35%;
+}
+
+/* =========================================
+   12. LABEL STATUS
+   Mengatur tampilan status pembayaran
+   dan status kunjungan
+========================================= */
+
+.status {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 4px;
+    background: #edf1f7;
+    color: #263b5e;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   13.A CONTAINER MODUL PASIEN
+   Memperlebar halaman Index PASIEN
+========================================= */
+
+body .container.pasien-container {
+    display: block;
+    width: calc(100% - 40px) !important;
+    max-width: 1800px !important;
+    margin: 25px auto !important;
+    padding: 30px;
+    box-sizing: border-box;
+}
+/* =========================================
+   13.B CONTAINER MODUL KUNJUNGAN
+   Memperlebar halaman Index Kunjungan
+========================================= */
+
+body .container.kunjungan-container {
+    display: block;
+    width: calc(100% - 40px) !important;
+    max-width: 1800px !important;
+    margin: 25px auto !important;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   14. TABEL RESPONSIVE KUNJUNGAN
+========================================= */
+
+.kunjungan-container .table-responsive {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.kunjungan-container table {
+    width: 100%;
+    min-width: 1250px;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+/* =========================================
+   15. KOLOM AKSI KUNJUNGAN
+========================================= */
+
+.kunjungan-container td.aksi {
+    min-width: 245px;
+    white-space: nowrap;
+}
+
+.kunjungan-container td.aksi .btn {
+    display: inline-block;
+    margin: 2px;
+    padding: 8px 11px;
+    font-size: 12px;
+}
+
+/* =========================================
+   16. FORM CREATE DAN EDIT KUNJUNGAN
+   Mengatur lebar formulir agar lebih nyaman
+========================================= */
+
+.container.kunjungan-form {
+    width: 92%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+.kunjungan-form form {
+    margin-top: 20px;
+}
+
+.kunjungan-form input,
+.kunjungan-form select,
+.kunjungan-form textarea {
+    width: 100%;
+}
+
+.kunjungan-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.kunjungan-form .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   17. HALAMAN DETAIL KUNJUNGAN
+   Mengatur container halaman Show
+========================================= */
+
+.container.kunjungan-detail-container {
+    width: 94%;
+    max-width: 1250px;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+/* =========================================
+   18. PEMBAGIAN DETAIL KUNJUNGAN
+   Membagi informasi menjadi dua kolom:
+   Informasi Kunjungan dan Pembayaran
+========================================= */
+
+.detail-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* =========================================
+   19. KARTU DETAIL
+   Mengatur kotak pembungkus setiap bagian
+   informasi kunjungan dan pembayaran
+========================================= */
+
+.detail-section {
+    background: #f8fafc;
+    border: 1px solid #dce3ed;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 0;
+}
+
+.detail-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    font-size: 19px;
+    color: #263b5e;
+    border-bottom: 2px solid #dce3ed;
+}
+
+/* =========================================
+   20. TABEL DETAIL KUNJUNGAN
+   Menyamakan warna kolom kiri dan kanan
+   agar informasi terlihat lebih seragam
+========================================= */
+
+.detail-section .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.detail-section .detail-table th,
+.detail-section .detail-table td {
+    padding: 13px 12px;
+    border: 1px solid #dce3ed;
+    text-align: left;
+    vertical-align: top;
+    background: #fff;
+    color: #333;
+}
+
+.detail-section .detail-table th {
+    width: 42%;
+    font-weight: bold;
+}
+
+.detail-section .detail-table td {
+    overflow-wrap: break-word;
+}
+
+/* =========================================
+   21. WARNA BARIS TABEL DETAIL
+   Memberikan warna selang-seling pada baris
+   tetapi warna kiri dan kanan tetap sama
+========================================= */
+
+.detail-section .detail-table tr:nth-child(even) th,
+.detail-section .detail-table tr:nth-child(even) td {
+    background: #eef3f9;
+}
+
+/* =========================================
+   22. TOMBOL HALAMAN DETAIL KUNJUNGAN
+   Mengatur posisi tombol Edit dan Kembali
+========================================= */
+
+.kunjungan-detail-container .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   23. RESPONSIVE TABLET
+   Mengatur tampilan pada layar tablet
+========================================= */
+
+@media (max-width: 900px) {
+
+    .detail-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .container.kunjungan-container,
+    .container.kunjungan-form,
+    .container.kunjungan-detail-container {
+        width: 96%;
+        padding: 20px;
+    }
+
+}
+
+/* =========================================
+   24. RESPONSIVE MOBILE
+   Mengatur tampilan pada layar handphone
+========================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 96%;
+        padding: 15px;
+    }
+
+    table {
+        min-width: 850px;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* =========================================
+   25. PENYESUAIAN DETAIL MOBILE
+   Memperkecil jarak dan ukuran teks tabel
+   agar nyaman dibaca pada layar kecil
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navigation {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navigation a {
+        text-align: center;
+    }
+
+    .container.kunjungan-container,
+    .container.kunjungan-form,
+    .container.kunjungan-detail-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .detail-section {
+        padding: 12px;
+    }
+
+    .detail-section .detail-table th,
+    .detail-section .detail-table td {
+        padding: 9px 7px;
+        font-size: 13px;
+    }
+
+}
+/* Tombol Aksi dengan Ikon */
+
+td.aksi {
+    white-space: nowrap;
+    text-align: center;
+    min-width: 125px;
+}
+
+td.aksi .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 2px;
+    border-radius: 6px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+td.aksi .btn i {
+    pointer-events: none;
+}

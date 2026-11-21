@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    font-family: Arial, sans-serif;
+    background: #f2f5f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #176b87;
+    margin-top: 0;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #176b87;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f7f9fb;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 13px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 2px;
+}
+
+.tambah {
+    background: #198754;
+}
+
+.detail {
+    background: #0d6efd;
+}
+
+.edit {
+    background: #f0ad4e;
+}
+
+.hapus {
+    background: #dc3545;
+}
+
+.kembali {
+    background: #6c757d;
+}
+
+.form-hapus {
+    display: inline;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="file"] {
+    background: #f8f9fa;
+}
+
+textarea {
+    resize: vertical;
+}
+
+small {
+    display: block;
+    margin-top: 7px;
+    color: #777;
+}
+
+button {
+    font-family: inherit;
+}
+
+.form-container {
+    max-width: 650px;
+}
+
+.form-container button {
+    margin-top: 22px;
+}
+
+.alert {
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.sukses {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.gagal {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.kosong {
+    text-align: center;
+    color: #777;
+}
+
+.detail-table th {
+    width: 30%;
+}
+
+.foto-pasien {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.foto-preview {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.foto-detail {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.foto-besar {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 18px;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 850px;
+    }
+}
+
